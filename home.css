@@ -1,1 +1,150 @@
+:root{
+    --dmatt: rgb(35,35,35);
+    --matt: rgb(50,50,50);
+    --lgreen: rgb(210,235,210);
+}
+body{
+    margin: 0;
+}
+input{
+    display: none;
+}
+
+.w{
+    height: 1000dvw;
+}
+
+@media (min-width: 992px){
+    .bar{
+        background: var(--dmatt);
+        opacity: 0.9;
+        width: clamp(60px, 8dvw, 85px);
+        border-bottom-right-radius: 10%;
+        position: sticky;
+        top: 0;
+        transition-duration: .3s;
+        -webkit-transition: all 0.3s ease-in-out;
+    }
+    .bar h1{
+        color: #fff;
+        font-size: clamp(1.5rem, 2.4dvw, 2rem);
+        margin-bottom: 0;
+        transition-duration: .3s;
+        -webkit-transition: all 0.3s ease-in-out;
+    }
+    .bar h1:hover{
+        background: var(--matt);
+        cursor: pointer;
+    }
+    
+
+    #bartog:checked ~ .opt{
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        transition-duration: .8s;
+        -webkit-transition: all .8s ease-in-out;
+    }
+
+    .opt{
+        background: var(--dmatt);
+        font-size: clamp(1rem, 2dvw, 1.3rem);
+        width: clamp(150px, 13dvw, 180px);
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        transition-duration: 1.2s;
+        -webkit-transition: all 1.2s ease-in-out;
+        
+    }
+    .opt:hover{
+        width: clamp(170px, 14.2dvw, 210px);
+        transition-duration: .3s;
+        -webkit-transition: all 0.3s ease-in-out;
+    }
+    .opt a{
+        color: #fff;
+        text-decoration: none;
+        margin: clamp(3px, .3dvw, 7px);
+        transition-duration: .3s;
+        -webkit-transition: all 0.3s ease-in-out;
+    }
+    .opt a:hover{
+        color: var(--lgreen);
+        padding-left: clamp(2px, 1dvw, 8px);
+        border-bottom: 3px solid var(--matt);
+        border-top: 3px solid var(--matt);
+        cursor: pointer;
+    }
+    .opt a:visited{
+        color: #fff;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 991px){
+    .bar{
+        text-align: center;
+        float: right;
+        background: var(--dmatt);
+        width: clamp(60px, 8dvw, 85px);
+        position: sticky;
+        top: 0;
+        transform: translateY(100%);
+        transition-duration: .3s;
+    }
+    .bar h1{
+        color: #fff;
+        font-size: clamp(1.5rem, 2.4dvw, 2rem);
+        margin-bottom: 0;
+        transition: 0.3s;
+        transition-duration: .3s;
+    }
+    .bar h1:hover{
+        background: var(--matt);
+        cursor: pointer;
+    }
+
+    #bartog:checked ~ .opt{
+        width: 0%;
+        max-height: 0px;
+        overflow: hidden;
+        transition: .8s;
+        -webkit-transition: all 0.8s ease-in-out;
+    }
+
+
+    .opt{
+        background: var(--dmatt);
+        font-size: clamp(1rem, 2dvw, 1.3rem);
+        width: clamp(80px, 11.5dvw, 100px);
+        max-height: 100%;
+        border-bottom-right-radius: 5%;
+        border-top-right-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        transition: 1.8s;
+        -webkit-transition: all 1.8s ease-in-out;
+    }
+    .opt a{
+        color: #fff;
+        font-size: clamp(1.15rem, 2.5dvw, 1.4rem);
+        line-height: 2.5;
+        height: clamp(35px, 9dvw, 45px);
+        text-decoration: none;
+        transition: 0.3s;
+        -webkit-transition: all 0.3s ease-in-out;
+    }
+    .opt a:hover{
+        color: var(--lgreen);
+        cursor: pointer;
+    }
+    .opt a:visited{
+        color: #fff;
+    }
+}
 
