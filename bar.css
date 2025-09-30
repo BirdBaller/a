@@ -1,23 +1,27 @@
 :root{
     --pure: #000;
     --txt: #fff;
-    --lcolor: rgb(50,50,50);
-    --color: rgb(32,32,32);
+    --lcolor: rgb(40,40,40);
+    --color: rgb(30,30,30);
     --dcolor: rgb(20,20,20);
     --ddcolor: rgb(7,7,7);
-    
-    --lblue: rgb(190,200,250);
-    --blue: rgb(110,130,255);
+
+    --laccent: rgb(190,200,250);
+    --accent: rgb(110,130,255);
 }
 
 .lightM{
     --pure: #fff;
     --txt: #000;
-    --lcolor: rgb(240,240,240);
-    --color: rgb(225,225,225);
-    --dcolor: rgb(210,210,210);
+    --lcolor: rgb(255,255,255);
+    --color: rgb(240,240,245);
+    --dcolor: rgb(235,235,235);
     --ddcolor: rgb(190,190,190);
+
+    --laccent: rgb(20,20,30);
+    --accent: rgb(110,130,255)
 }
+
 
 
 html{
@@ -26,7 +30,7 @@ html{
 }
 body{
     margin: 0;
-    background: var(--color);
+    background: var(--lcolor);
     color: var(--txt);
 }
 input{
@@ -47,10 +51,10 @@ input{
         position: sticky;
         top: 0;
         transition-duration: .3s;
-        -webkit-transition: 0.3s;
+        -webkit-transition-duration: 0.3s;
     }
     .bar h1{
-        background: linear-gradient(to right, var(--color),var(--dcolor));
+        background: var(--dcolor);
         color: var(--txt);
         font-size: clamp(1.5rem, 2.4dvw, 2rem);
         width: clamp(145px, 14.5dvw, 190px);
@@ -63,8 +67,8 @@ input{
         -moz-transition: all .5s;
     }
     .bar h1:hover{
-        text-shadow: 1px 1px #000;
-        color: var(--lblue);
+        text-shadow: 1px 1px var(--pure);
+        color: var(--laccent);
         cursor: pointer;
     }
     #big-margin👍{
@@ -74,7 +78,7 @@ input{
     .bar .stuf{
         background: var(--dcolor);
         padding: 0;
-        border-bottom: 2px solid var(--blue);
+        border-bottom: 2px solid var(--accent);
         width: 100%;
         display: inline-flex;
     }
@@ -87,26 +91,46 @@ input{
         vertical-align: center;
     }
     .stuf a:hover{
-        color: var(--lblue);
+        color: var(--laccent);
         transition-duration: .3s;
-        -webkit-transition: .3s;
+        -webkit-transition-duration: .3s;
         -o-transition-duration: .3s;
         -moz-transition-duration: .3s;
     }
-    #LightSwitch{
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 50%;
+    #SwitchImg{
+        display: block;
+        cursor: pointer;
+        margin-left: 12%;
+        width: clamp(40px, 4dvw, 50px);
+        height: clamp(20px, 2dvw, 25px);
+        background: var(--pure);
+        border-radius: 16px;
+        border: 2px solid var(--txt);
     }
-    #LightSwitch image{
-        width: 100%;
-        height: 100%;
+    #SwitchImg:after{
+        content: "";
+        display: block;
+        width: clamp(20px, 2dvw, 25px);
+        height: clamp(20px, 2dvw, 25px);
+        margin-top: 0;
+        background: var(--txt);
+        border-radius: 50%;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        -moz-transition: 0.5s;
+    }
+    #LightSwitch:checked ~ #SwitchImg:after{
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        -moz-transform: translateX(100%);
     }
     
+
     #bartog:checked ~ .opt{
         font-size: clamp(1rem, 2dvw, 1.3rem);
-        height: 97%;
+        height: 96.7dvh;
         width: clamp(170px, 14.2dvw, 210px);
         overflow: hidden;
         transition-property: width, height, font-size;
@@ -143,13 +167,13 @@ input{
         -moz-transition-duration: .2s, .5s;
         -moz-transition-delay: .5s, 1s;
     }
-    
-    
+
+
     .opt{
         height: 0;
         font-size: 0px;
         width: clamp(4px, 2%, 12px);
-        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),#000);
+        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
         opacity: .96;
         flex-direction: column;
         display: flex;
@@ -172,7 +196,7 @@ input{
     #bartog:checked ~ .opt:hover{
         width: clamp(210px, 15.5dvw, 255px);
         transition-duration: .3s;
-        -webkit-transition: all 0.3s;
+        -webkit-transition-duration: all 0.3s;
     }
     .opt a{
         color: var(--txt);
@@ -183,7 +207,7 @@ input{
         margin-left: 0;
         padding-left: clamp(3px, .3dvw, 7px);
         transition-duration: .3s;
-        -webkit-transition: 0.3s;
+        -webkit-transition-duration: 0.3s;
     }
     .opt a:hover{
         padding-left: clamp(2px, 1dvw, 8px);
@@ -213,14 +237,14 @@ input{
         -moz-transition-duration: 0s, .3s;
         -moz-transition-delay: .3s, .8s;
     }
-    
-    
+
+
     footer{
         background: var(--color);
         display: grid;
     }
 }
-   
+
 
 
 
@@ -231,11 +255,11 @@ input{
         display: none;
         font-size: 1px;
     }
-    
+
     .opt{
         display: none;
     }
-    
+
     .bar{
         opacity: 0.9;
         width: 100%;
@@ -243,7 +267,7 @@ input{
         position: sticky;
         top: 0;
         transition-duration: .3s;
-        -webkit-transition: 0.3s;
+        -webkit-transition-duration: 0.3s;
     }
     .bar h1{
         background: var(--color);
@@ -268,15 +292,15 @@ input{
     .stuf > a{
         display: none;
     }
-    
+
     }
     #mobtog:checked ~ .formob{
         height: 105dvh;
         overflow: hidden;
         transition: height .7s;
         -webkit-transition: height .7s;
-        o-transition: height .7s;
-        moz-transition: height .7s;
+        -o-transition: height .7s;
+        -moz-transition: height .7s;
     }
 
     .formob{
@@ -294,7 +318,7 @@ input{
         -o-transition: height .7s;
         -moz-transition: height .7s;
     }
-    
+
     .formob a{
         color: var(--txt);
         text-decoration: none;
@@ -312,5 +336,6 @@ input{
         text-decoration: none;
         color: var(--txt);
     }
-    
 }
+
+
