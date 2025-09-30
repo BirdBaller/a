@@ -1,13 +1,15 @@
 :root{
     --pure: #000;
     --txt: #fff;
-    --lcolor: rgb(40,40,40);
+    --lcolor: rgb(45,45,45);
     --color: rgb(30,30,30);
     --dcolor: rgb(20,20,20);
     --ddcolor: rgb(7,7,7);
+    --bcolor: rgb(33,33,33);
 
     --laccent: rgb(190,200,250);
     --accent: rgb(110,130,255);
+    --accent2: #0fb1cf;
 }
 
 .lightM{
@@ -17,11 +19,42 @@
     --color: rgb(240,240,245);
     --dcolor: rgb(235,235,235);
     --ddcolor: rgb(190,190,190);
+    --bcolor: rgb(245,245,245);
 
-    --laccent: rgb(20,20,30);
-    --accent: rgb(110,130,255)
+    --laccent: #0fb1cf;
+    --accent: #007ba7;
+    --accent2: #0fb1cf;
+}
+.lightM #Switchmob:after{
+    content: "";
+    background-image: url(sun.png);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+}
+.lightM #Switch:after{
+    content: "";
+    background-image: url(sun.png);
+}
+.lightM #Switch:hover:after{
+    content: "";
+    background-image: url(sun.png);
+    transform: translateX(102%);
+    -webkit-transform: translateX(102%);
+    -o-transform: translateX(102%);
+    -moz-transform: translateX(102%);
+}
+.lightM #Switch:focus:after{
+    content: "";
+    background-image: url(sun.png);
+    transform: translateX(102%);
+    -webkit-transform: translateX(102%);
+    -o-transform: translateX(102%);
+    -moz-transform: translateX(102%);
 }
 
+.
 
 
 html{
@@ -54,17 +87,16 @@ input{
         -webkit-transition-duration: 0.3s;
     }
     .bar h1{
-        background: var(--dcolor);
         color: var(--txt);
         font-size: clamp(1.5rem, 2.4dvw, 2rem);
         width: clamp(145px, 14.5dvw, 190px);
         margin-bottom: 0;
         margin-top: 0;
         padding-left: clamp(5px, 3dvw, 10px);
-        transition: all .5s;
-        -webkit-transition: all .5s;
-        -o-transition: all .5s;
-        -moz-transition: all .5s;
+        transition: .5s;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        -moz-transition: .5s;
     }
     .bar h1:hover{
         text-shadow: 1px 1px var(--pure);
@@ -92,39 +124,48 @@ input{
     }
     .stuf a:hover{
         color: var(--laccent);
-        transition-duration: .3s;
-        -webkit-transition-duration: .3s;
-        -o-transition-duration: .3s;
-        -moz-transition-duration: .3s;
+        transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        -moz-transition: .3s;
     }
-    #SwitchImg{
+    #Switch{
         display: block;
         cursor: pointer;
+        margin-top: .3%;
         margin-left: 12%;
-        width: clamp(40px, 4dvw, 50px);
+        width: clamp(20px, 2dvw, 25px);
         height: clamp(20px, 2dvw, 25px);
         background: var(--pure);
         border-radius: 16px;
         border: 2px solid var(--txt);
+        transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        -moz-transition: .3s;
     }
-    #SwitchImg:after{
+    #Switch:hover{
+        width: clamp(40px, 4dvw, 50px);
+    }
+    #Switch:focus{
+        width: clamp(40px, 4dvw, 50px);
+    }
+    #Switch:after{
         content: "";
         display: block;
         width: clamp(20px, 2dvw, 25px);
         height: clamp(20px, 2dvw, 25px);
         margin-top: 0;
-        background: var(--txt);
+        background-image: url(moon.png);
+        background-size: clamp(15px, 1.5dvw, 20px) clamp(15px, 1.3dvw, 20px);
+        background-position: center;
+        background-color: var(--txt);
+        background-repeat: no-repeat;
         border-radius: 50%;
-        transition: 0.5s;
-        -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
-        -moz-transition: 0.5s;
-    }
-    #LightSwitch:checked ~ #SwitchImg:after{
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        -o-transform: translateX(100%);
-        -moz-transform: translateX(100%);
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        -moz-transition: 0.3s;
     }
     
 
@@ -174,7 +215,7 @@ input{
         font-size: 0px;
         width: clamp(4px, 2%, 12px);
         background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
-        opacity: .96;
+        opacity: .95;
         flex-direction: column;
         display: flex;
         overflow: hidden;
@@ -195,8 +236,10 @@ input{
 
     #bartog:checked ~ .opt:hover{
         width: clamp(210px, 15.5dvw, 255px);
-        transition-duration: .3s;
-        -webkit-transition-duration: all 0.3s;
+        transition: .3s;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        -moz-transition: 0.3s;
     }
     .opt a{
         color: var(--txt);
@@ -270,7 +313,7 @@ input{
         -webkit-transition-duration: 0.3s;
     }
     .bar h1{
-        background: var(--color);
+        background: var(--dcolor);
         color: var(--txt);
         display: flex;
         overflow: visible;
@@ -278,12 +321,17 @@ input{
         height: clamp(2.5rem, 3.8dvw, 4.8rem);
         width: 35px;
         line-height: .9;
-        opacity: .9;
+        opacity: .85;
         padding: 4px;
         margin-bottom: 0;
         margin-top: 0;
         float: right;
-        transform: translateY(600%);
+        border: 2px solid var(--ddcolor);
+        border-right: 0px;
+        transform: translateY(55dvh);
+        -webkit-transform: translateY(55dvh);
+        -o-transform: translateY(55dvh);
+        -moz-transform: translateY(55dvh);
         transition: all .5s;
         -webkit-transition: all .5s;
         -o-transition: all .5s;
@@ -292,6 +340,37 @@ input{
     .stuf > a{
         display: none;
     }
+    
+    #Switchmob{
+        display: block;
+        cursor: pointer;
+        transform: translateX(300%);
+        margin-left: 12%;
+        width: clamp(40px, 4dvw, 50px);
+        height: clamp(20px, 2dvw, 25px);
+        background: var(--pure);
+        border-radius: 16px;
+        border: 2px solid var(--txt);
+    }
+    #Switchmob::after{
+        content: "";
+        display: block;
+        width: clamp(20px, 2dvw, 25px);
+        height: clamp(20px, 2dvw, 25px);
+        margin-top: 0;
+        background-image: url(moon.png);
+        background-size: clamp(15px, 1.5dvw, 20px) clamp(15px, 1.3dvw, 20px);
+        background-position: center;
+        background-color: var(--txt);
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        -moz-transition: 0.5s;
+    }
+    
+    #mobtog.checked
 
     }
     #mobtog:checked ~ .formob{
@@ -304,11 +383,11 @@ input{
     }
 
     .formob{
-        background: linear-gradient(to bottom, var(--color),var(--dcolor),#000);
+        background: var(--dcolor);
         justify-content: center;
         font-size: clamp(1rem, 2dvw, 1.3rem);
         height: 0;
-        width: clamp(200px, 30dvw, 275px);
+        width: clamp(225px, 24dvw, 300px);
         transform: translate(25dvw, -5%);
         overflow: hidden;
         flex-direction: column;
@@ -326,15 +405,19 @@ input{
         font-size: clamp(1.15rem, 2.5dvw, 1.4rem);
         height: clamp(45px, 10.5dvw, 55px);
         line-height: 2.5;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        background: rgb(42,42,42);
+        margin: 5%;
+        background: var(--bcolor);
         border-top: 2px solid var(--lcolor);
         border-bottom: 2px solid var(--lcolor);
     }
     .formob a:visited{
         text-decoration: none;
         color: var(--txt);
+    }
+    
+    
+    footer{
+        background: var(--dcolor);
     }
 }
 
