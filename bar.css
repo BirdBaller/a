@@ -58,9 +58,9 @@ input{
         margin-top: 0;
         padding-left: clamp(5px, 3dvw, 10px);
         transition: all .5s;
-        webkit-transition: all .5s;
-        o-transition: all .5s;
-        moz-transition: all .5s;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        -moz-transition: all .5s;
     }
     .bar h1:hover{
         text-shadow: 1px 1px #000;
@@ -90,10 +90,19 @@ input{
         color: var(--lblue);
         transition-duration: .3s;
         -webkit-transition: .3s;
-        o-transition-duration: .3s;
-        moz-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        -moz-transition-duration: .3s;
     }
-    
+    #LightSwitch{
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+    }
+    #LightSwitch image{
+        width: 100%;
+        height: 100%;
+    }
     
     #bartog:checked ~ .opt{
         font-size: clamp(1rem, 2dvw, 1.3rem);
@@ -106,12 +115,12 @@ input{
         -webkit-transition-property: width, height, font-size;
         -webkit-transition-duration: 1s, .6s, .2s;
         -webkit-transition-delay: .45s, 0s, .5s;
-        o-transition-property: width, height, font-size;
-        o-transition-duration: 1s, .6s, .2s;
-        o-transition-delay: .45s, 0s, .5s;
-        moz-transition-property: width, height, font-size;
-        moz-transition-duration: 1s, .6s, .2s;
-        moz-transition-delay: .45s, 0s, .5s;
+        -o-transition-property: width, height, font-size;
+        -o-transition-duration: 1s, .6s, .2s;
+        -o-transition-delay: .45s, 0s, .5s;
+        -moz-transition-property: width, height, font-size;
+        -moz-transition-duration: 1s, .6s, .2s;
+        -moz-transition-delay: .45s, 0s, .5s;
     }
     #bartog:checked ~ .opt p1{
         color: var(--txt);
@@ -127,11 +136,181 @@ input{
         -webkit-transition-property: font-size, margin-bottom;
         -webkit-transition-duration: .2s, .5s;
         -webkit-transition-delay: .5s, 1s;
-        o-transition-property: font-size, margin-bottom;
-        o-transition-duration: .2s, .5s;
-        o-transition-delay: .5s, 1s;
-        moz-transition-property: font-size, margin-bottom;
-        moz-transition-duration: .2s, .5s;
-        moz-transition-delay: .5s, 1s;
+        -o-transition-property: font-size, margin-bottom;
+        -o-transition-duration: .2s, .5s;
+        -o-transition-delay: .5s, 1s;
+        -moz-transition-property: font-size, margin-bottom;
+        -moz-transition-duration: .2s, .5s;
+        -moz-transition-delay: .5s, 1s;
     }
     
+    
+    .opt{
+        height: 0;
+        font-size: 0px;
+        width: clamp(4px, 2%, 12px);
+        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),#000);
+        opacity: .96;
+        flex-direction: column;
+        display: flex;
+        overflow: hidden;
+        transition-property: width, height, font-size;
+        transition-duration: .7s, .6s, 0s;
+        transition-delay: 0s, .5s, .3s;
+        -webkit-transition-property: width, height, font-size;
+        -webkit-transition-duration: .7s, .6s, 0s;
+        -webkit-transition-delay: 0s, .5s, .3s;
+        -o-transition-property: width, height, font-size;
+        -o-transition-duration: .7s, .6s, 0s;
+        -o-transition-delay: 0s, .5s, .3s;
+        -moz-transition-property: width, height, font-size;
+        -moz-transition-duration: .7s, .6s, 0s;
+        -moz-transition-delay: 0s, .5s, .3s;
+    }
+
+
+    #bartog:checked ~ .opt:hover{
+        width: clamp(210px, 15.5dvw, 255px);
+        transition-duration: .3s;
+        -webkit-transition: all 0.3s;
+    }
+    .opt a{
+        color: var(--txt);
+        text-decoration: none;
+        white-space: nowrap;
+        margin-bottom: clamp(3px, .3dvw, 7px);
+        margin-top: clamp(3px, .3dvw, 7px);
+        margin-left: 0;
+        padding-left: clamp(3px, .3dvw, 7px);
+        transition-duration: .3s;
+        -webkit-transition: 0.3s;
+    }
+    .opt a:hover{
+        padding-left: clamp(2px, 1dvw, 8px);
+        border-bottom: 3px solid var(--color);
+        border-top: 3px solid var(--color);
+        cursor: pointer;
+    }
+    .opt a:visited{
+        text-decoration: none;
+        color: var(--txt);
+    }
+    .opt p1{
+        color: var(--txt);
+        font-size: 0;
+        white-space: nowrap;
+        cursor: default;
+        transition-property: font-size, margin-bottom;
+        transition-duration: 0s, .3s;
+        transition-delay: .3s, .8s;
+        -webkit-transition-property: font-size, margin-bottom;
+        -webkit-transition-duration: 0s, .3s;
+        -webkit-transition-delay: .3s, .8s;
+        -o-transition-property: font-size, margin-bottom;
+        -o-transition-duration: 0s, .3s;
+        -o-transition-delay: .3s, .8s;
+        -moz-transition-property: font-size, margin-bottom;
+        -moz-transition-duration: 0s, .3s;
+        -moz-transition-delay: .3s, .8s;
+    }
+    
+    
+    footer{
+        background: var(--color);
+        display: grid;
+    }
+}
+   
+
+
+
+
+
+@media (max-width: 991px){
+    #desk{
+        display: none;
+        font-size: 1px;
+    }
+    
+    .opt{
+        display: none;
+    }
+    
+    .bar{
+        opacity: 0.9;
+        width: 100%;
+        border-bottom-right-radius: 10%;
+        position: sticky;
+        top: 0;
+        transition-duration: .3s;
+        -webkit-transition: 0.3s;
+    }
+    .bar h1{
+        background: var(--color);
+        color: var(--txt);
+        display: flex;
+        overflow: visible;
+        font-size: clamp(1.3rem, 2.2dvw, 1.8rem);
+        height: clamp(2.5rem, 3.8dvw, 4.8rem);
+        width: 35px;
+        line-height: .9;
+        opacity: .9;
+        padding: 4px;
+        margin-bottom: 0;
+        margin-top: 0;
+        float: right;
+        transform: translateY(600%);
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        -moz-transition: all .5s;
+    }
+    .stuf > a{
+        display: none;
+    }
+    
+    }
+    #mobtog:checked ~ .formob{
+        height: 105dvh;
+        overflow: hidden;
+        transition: height .7s;
+        -webkit-transition: height .7s;
+        o-transition: height .7s;
+        moz-transition: height .7s;
+    }
+
+    .formob{
+        background: linear-gradient(to bottom, var(--color),var(--dcolor),#000);
+        justify-content: center;
+        font-size: clamp(1rem, 2dvw, 1.3rem);
+        height: 0;
+        width: clamp(200px, 30dvw, 275px);
+        transform: translate(25dvw, -5%);
+        overflow: hidden;
+        flex-direction: column;
+        display: flex;
+        transition: height .7s;
+        -webkit-transition: height .7s;
+        -o-transition: height .7s;
+        -moz-transition: height .7s;
+    }
+    
+    .formob a{
+        color: var(--txt);
+        text-decoration: none;
+        text-align: center;
+        font-size: clamp(1.15rem, 2.5dvw, 1.4rem);
+        height: clamp(45px, 10.5dvw, 55px);
+        line-height: 2.5;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background: rgb(42,42,42);
+        border-top: 2px solid var(--lcolor);
+        border-bottom: 2px solid var(--lcolor);
+    }
+    .formob a:visited{
+        text-decoration: none;
+        color: var(--txt);
+    }
+    
+}
