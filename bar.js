@@ -2,8 +2,8 @@ const Switch = document.getElementById("LightSwitch");
 const html = document.getElementById("html");
 
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
+const toggled = localStorage.getItem("on");
+if (toggled === "light") {
     html.classList.add("lightM");
     Switch.checked = true;
 }
@@ -12,9 +12,9 @@ if (savedTheme === "light") {
 Switch.addEventListener("change", function () {
     if (this.checked) {
         html.classList.add("lightM");
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("on", "light");
     } else {
         html.classList.remove("lightM");
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem("on", "dark");
     }
 });
