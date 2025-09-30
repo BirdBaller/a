@@ -1,0 +1,137 @@
+:root{
+    --pure: #000;
+    --txt: #fff;
+    --lcolor: rgb(50,50,50);
+    --color: rgb(32,32,32);
+    --dcolor: rgb(20,20,20);
+    --ddcolor: rgb(7,7,7);
+    
+    --lblue: rgb(190,200,250);
+    --blue: rgb(110,130,255);
+}
+
+.lightM{
+    --pure: #fff;
+    --txt: #000;
+    --lcolor: rgb(240,240,240);
+    --color: rgb(225,225,225);
+    --dcolor: rgb(210,210,210);
+    --ddcolor: rgb(190,190,190);
+}
+
+
+html{
+    overflow-X: hidden;
+    height: auto;
+}
+body{
+    margin: 0;
+    background: var(--color);
+    color: var(--txt);
+}
+input{
+    display: none;
+}
+
+
+@media (min-width: 992px){
+    #mob{
+        display: none;
+        font-size: 1px;
+    }
+    .formob{
+        display: none;
+    }
+    .bar{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        transition-duration: .3s;
+        -webkit-transition: 0.3s;
+    }
+    .bar h1{
+        background: linear-gradient(to right, var(--color),var(--dcolor));
+        color: var(--txt);
+        font-size: clamp(1.5rem, 2.4dvw, 2rem);
+        width: clamp(145px, 14.5dvw, 190px);
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-left: clamp(5px, 3dvw, 10px);
+        transition: all .5s;
+        webkit-transition: all .5s;
+        o-transition: all .5s;
+        moz-transition: all .5s;
+    }
+    .bar h1:hover{
+        text-shadow: 1px 1px #000;
+        color: var(--lblue);
+        cursor: pointer;
+    }
+    #big-margin👍{
+        margin-left: clamp(70px, 6dvw, 100px);
+        margin-right: clamp(70px, 6dvw, 100px);
+    }
+    .bar .stuf{
+        background: var(--dcolor);
+        padding: 0;
+        border-bottom: 2px solid var(--blue);
+        width: 100%;
+        display: inline-flex;
+    }
+    .stuf a{
+        color: var(--txt);
+        margin-left: clamp(10px, 5%, 20px);
+        font-size: clamp(1.2rem, 2.5dvw, 1.4rem);
+        margin-top: 3px;
+        cursor: pointer;
+        vertical-align: center;
+    }
+    .stuf a:hover{
+        color: var(--lblue);
+        transition-duration: .3s;
+        -webkit-transition: .3s;
+        o-transition-duration: .3s;
+        moz-transition-duration: .3s;
+    }
+    
+    
+    #bartog:checked ~ .opt{
+        font-size: clamp(1rem, 2dvw, 1.3rem);
+        height: 97%;
+        width: clamp(170px, 14.2dvw, 210px);
+        overflow: hidden;
+        transition-property: width, height, font-size;
+        transition-duration: 1s, .6s, .2s;
+        transition-delay: .45s, 0s, .5s;
+        -webkit-transition-property: width, height, font-size;
+        -webkit-transition-duration: 1s, .6s, .2s;
+        -webkit-transition-delay: .45s, 0s, .5s;
+        o-transition-property: width, height, font-size;
+        o-transition-duration: 1s, .6s, .2s;
+        o-transition-delay: .45s, 0s, .5s;
+        moz-transition-property: width, height, font-size;
+        moz-transition-duration: 1s, .6s, .2s;
+        moz-transition-delay: .45s, 0s, .5s;
+    }
+    #bartog:checked ~ .opt p1{
+        color: var(--txt);
+        font-size: clamp(.8rem, 1.1dvw, 1.15rem);
+        align-self: center;
+        border-bottom: 1px dashed #fff;
+        margin-top: clamp(5px, .4dvw, 10px);
+        margin-bottom: clamp(20px, 3dvw, 35px);
+        opacity: 1;
+        transition-property: font-size, margin-bottom;
+        transition-duration: .2s, .5s;
+        transition-delay: .5s, 1s;
+        -webkit-transition-property: font-size, margin-bottom;
+        -webkit-transition-duration: .2s, .5s;
+        -webkit-transition-delay: .5s, 1s;
+        o-transition-property: font-size, margin-bottom;
+        o-transition-duration: .2s, .5s;
+        o-transition-delay: .5s, 1s;
+        moz-transition-property: font-size, margin-bottom;
+        moz-transition-duration: .2s, .5s;
+        moz-transition-delay: .5s, 1s;
+    }
+    
