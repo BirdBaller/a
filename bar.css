@@ -8,11 +8,20 @@
     --bcolor: rgb(33,33,33);
 
     --laccent: rgb(190,200,250);
-    --accent: rgb(110,130,255);
-    --accent2: #0fb1cf;
+    --accent: #0fb1cf;
+    --accent2: #007ba7;
 }
 
-.lightM{
+
+html:has(#LightSwitch:checked) #Switchmob:after{
+    content: "";
+    background-image: url(sun.png);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+}
+html:has(#LightSwitch:checked){
     --pure: #fff;
     --txt: #000;
     --lcolor: rgb(255,255,255);
@@ -21,23 +30,15 @@
     --ddcolor: rgb(190,190,190);
     --bcolor: rgb(245,245,245);
 
-    --laccent: #0fb1cf;
-    --accent: #007ba7;
-    --accent2: #0fb1cf;
+    --laccent: rgb(80,85,140);
+    --accent: #0fb1cf;
+    --accent2: #007ba7;
 }
-.lightM #Switchmob:after{
-    content: "";
-    background-image: url(sun.png);
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-}
-.lightM #Switch:after{
+html:has(#LightSwitch:checked) #Switch:after{
     content: "";
     background-image: url(sun.png);
 }
-.lightM #Switch:hover:after{
+html:has(#LightSwitch:checked) #Switch:hover:after{
     content: "";
     background-image: url(sun.png);
     transform: translateX(102%);
@@ -45,7 +46,7 @@
     -o-transform: translateX(102%);
     -moz-transform: translateX(102%);
 }
-.lightM #Switch:focus:after{
+html:has(#LightSwitch:checked) #Switch:focus:after{
     content: "";
     background-image: url(sun.png);
     transform: translateX(102%);
@@ -53,13 +54,17 @@
     -o-transform: translateX(102%);
     -moz-transform: translateX(102%);
 }
-
-.
-
 
 html{
     overflow-X: hidden;
     height: auto;
+}
+html::-webkit-scrollbar{
+    width: clamp(4px, .67dvw, 10px);
+    background: var(--pure);
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--dcolor);
 }
 body{
     margin: 0;
@@ -173,7 +178,6 @@ input{
         font-size: clamp(1rem, 2dvw, 1.3rem);
         height: 96.7dvh;
         width: clamp(170px, 14.2dvw, 210px);
-        overflow: hidden;
         transition-property: width, height, font-size;
         transition-duration: 1s, .6s, .2s;
         transition-delay: .45s, 0s, .5s;
@@ -193,7 +197,7 @@ input{
         align-self: center;
         border-bottom: 1px dashed #fff;
         margin-top: clamp(5px, .4dvw, 10px);
-        margin-bottom: clamp(20px, 3dvw, 35px);
+        margin-bottom: clamp(10px, 2dvw, 25px);
         opacity: 1;
         transition-property: font-size, margin-bottom;
         transition-duration: .2s, .5s;
@@ -218,7 +222,8 @@ input{
         opacity: .95;
         flex-direction: column;
         display: flex;
-        overflow: hidden;
+        overflow-X: hidden;
+        overflow-Y: scroll;
         transition-property: width, height, font-size;
         transition-duration: .7s, .6s, 0s;
         transition-delay: 0s, .5s, .3s;
@@ -232,14 +237,19 @@ input{
         -moz-transition-duration: .7s, .6s, 0s;
         -moz-transition-delay: 0s, .5s, .3s;
     }
-
-
     #bartog:checked ~ .opt:hover{
         width: clamp(210px, 15.5dvw, 255px);
         transition: .3s;
         -webkit-transition: 0.3s;
         -o-transition: 0.3s;
         -moz-transition: 0.3s;
+    }
+    .opt::-webkit-scrollbar{
+        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
+        width: clamp(3px, .41dvw, 8px);
+    }
+    .opt::-webkit-scrollbar-thumb{
+        background: var(--color);
     }
     .opt a{
         color: var(--txt);
@@ -280,7 +290,23 @@ input{
         -moz-transition-duration: 0s, .3s;
         -moz-transition-delay: .3s, .8s;
     }
-
+    #smol-margin{
+        margin-top: 6.7%;
+    }
+    #dsearch{
+        display: block;
+        background: var(--pure);
+        border: none;
+        color: var(--txt);
+        margin-bottom: clamp(20px, 3dvw, 35px);
+        width: 100%;
+        font-size: clamp(1rem, 1.5dvw, 1.2rem);
+        padding-top: clamp(10px, 3dvw, 15px);
+        padding-bottom: clamp(10px, 3dvw, 15px);
+        
+    }
+    
+    
 
     footer{
         background: var(--color);
