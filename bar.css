@@ -61,7 +61,7 @@ html{
 }
 @supports (-moz-appearance:none) {
     html{
-        scrollbar-width: clamp(4px, .67dvw, 10px);
+        scrollbar-width: thin;
         scrollbar-color: var(--dcolor) var(--pure);
     }
 }
@@ -253,7 +253,7 @@ input{
     }
     @supports (-moz-appearance:none) {
         .opt{
-            scrollbar-width: clamp(3px, .41dvw, 8px);
+            scrollbar-width: thin;
             scrollbar-color: var(--color) linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
         }
     }
@@ -456,5 +456,4 @@ input{
         background: var(--dcolor);
     }
 }
-
 
