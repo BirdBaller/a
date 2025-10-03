@@ -13,14 +13,7 @@
 }
 
 
-html:has(#LightSwitch:checked) #Switchmob:after{
-    content: "";
-    background-image: url(sun.png);
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-}
+
 html:has(#LightSwitch:checked){
     --pure: #fff;
     --txt: #000;
@@ -33,6 +26,14 @@ html:has(#LightSwitch:checked){
     --laccent: rgb(80,85,140);
     --accent: #0fb1cf;
     --accent2: #007ba7;
+}
+html:has(#LightSwitch:checked) #Switchmob:after{
+    content: "";
+    background-image: url(sun.png);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -moz-transform: translateX(100%);
 }
 html:has(#LightSwitch:checked) #Switch:after{
     content: "";
@@ -54,18 +55,24 @@ html:has(#LightSwitch:checked) #Switch:focus:after{
     -o-transform: translateX(102%);
     -moz-transform: translateX(102%);
 }
-
 html{
     overflow-X: hidden;
     height: auto;
 }
+@supports (-moz-appearance:none) {
+    html{
+        scrollbar-width: clamp(4px, .67dvw, 10px);
+        scrollbar-color: var(--dcolor) var(--pure);
+    }
+}
 html::-webkit-scrollbar{
-    width: clamp(4px, .67dvw, 10px);
-    background: var(--pure);
+    width: clamp(4px, .67dvw, 10px) !important;
+    background: var(--pure) !important;
 }
 html::-webkit-scrollbar-thumb{
-    background: var(--dcolor);
+    background: var(--dcolor) !important;
 }
+
 body{
     margin: 0;
     background: var(--lcolor);
@@ -244,12 +251,18 @@ input{
         -o-transition: 0.3s;
         -moz-transition: 0.3s;
     }
+    @supports (-moz-appearance:none) {
+        .opt{
+            scrollbar-width: clamp(3px, .41dvw, 8px);
+            scrollbar-color: var(--color) linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
+        }
+    }
     .opt::-webkit-scrollbar{
-        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
-        width: clamp(3px, .41dvw, 8px);
+        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure)) !important;
+        width: clamp(3px, .41dvw, 8px) !important;
     }
     .opt::-webkit-scrollbar-thumb{
-        background: var(--color);
+        background: var(--color) !important;
     }
     .opt a{
         color: var(--txt);
