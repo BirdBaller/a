@@ -409,9 +409,6 @@ input{
         -moz-transition: 0.5s;
     }
     
-    #mobtog.checked
-
-    }
     #mobtog:checked ~ .formob{
         height: 105dvh;
         overflow: hidden;
