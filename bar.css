@@ -66,11 +66,11 @@ html{
     }
 }
 html::-webkit-scrollbar{
-    width: clamp(4px, .67dvw, 10px) !important;
-    background: var(--pure) !important;
+    width: clamp(4px, .67dvw, 10px);
+    background: var(--pure);
 }
 html::-webkit-scrollbar-thumb{
-    background: var(--dcolor) !important;
+    background: var(--dcolor);
 }
 
 body{
@@ -105,6 +105,7 @@ input{
         margin-bottom: 0;
         margin-top: 0;
         padding-left: clamp(5px, 3dvw, 10px);
+        cursor: pointer;
         transition: .5s;
         -webkit-transition: .5s;
         -o-transition: .5s;
@@ -113,7 +114,6 @@ input{
     .bar h1:hover{
         text-shadow: 1px 1px var(--pure);
         color: var(--laccent);
-        cursor: pointer;
     }
     #big-margin👍{
         margin-left: clamp(70px, 6dvw, 100px);
@@ -229,6 +229,7 @@ input{
         opacity: .95;
         flex-direction: column;
         display: flex;
+        position: fixed;
         overflow-X: hidden;
         overflow-Y: scroll;
         transition-property: width, height, font-size;
@@ -254,15 +255,15 @@ input{
     @supports (-moz-appearance:none) {
         .opt{
             scrollbar-width: thin;
-            scrollbar-color: var(--color) linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
+            scrollbar-color: var(--color) linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure)) !important;
         }
     }
     .opt::-webkit-scrollbar{
-        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure)) !important;
-        width: clamp(3px, .41dvw, 8px) !important;
+        background: linear-gradient(to bottom, var(--dcolor),var(--dcolor),var(--pure));
+        width: clamp(3px, .41dvw, 8px);
     }
     .opt::-webkit-scrollbar-thumb{
-        background: var(--color) !important;
+        background: var(--color);
     }
     .opt a{
         color: var(--txt);
@@ -272,14 +273,16 @@ input{
         margin-top: clamp(3px, .3dvw, 7px);
         margin-left: 0;
         padding-left: clamp(3px, .3dvw, 7px);
+        cursor: pointer;
         transition-duration: .3s;
         -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
     }
     .opt a:hover{
         padding-left: clamp(2px, 1dvw, 8px);
         border-bottom: 3px solid var(--color);
         border-top: 3px solid var(--color);
-        cursor: pointer;
     }
     .opt a:visited{
         text-decoration: none;
@@ -322,14 +325,49 @@ input{
     
 
     footer{
-        background: var(--color);
+        background: var(--dcolor);
+        height: clamp(180px, 27dvh, 220px);
         display: grid;
+    }
+    .abt-us{
+        width: clamp(150px, 30%, 450px);
+        margin: clamp(10px, 3dvw, 15px) 0 clamp(10px, 3dvw, 15px) clamp(15px, 5dvw, 25px);
+        padding-right: clamp(15px, 5dvw, 25px);
+        border-right: 1px solid var(--laccent);
+    }
+    .abt-us h1{
+        font-size: clamp(1.4rem, 3dvw, 2.2rem);
+        border-bottom: 1px solid var(--accent);
+    }
+    .abt-us p1{
+        font-size: clamp(1rem, 1.1dvw, 1.2rem);
     }
 }
 
 
 
-
+@media (min-width: 768px) and (max-width: 991px){
+    
+    footer{
+        background: var(--dcolor);
+        height: clamp(170px, 26dvh, 190px) !important;
+        display: grid !important;
+    }
+    .abt-us{
+        width: clamp(150px, 30%, 450px) !important;
+        margin: clamp(10px, 3dvw, 15px) 0 clamp(10px, 3dvw, 15px) clamp(15px, 5dvw, 25px) !important;
+        padding-right: clamp(15px, 5dvw, 25px) !important;
+        border-right: 1px solid var(--laccent) !important;
+        border-bottom: none !important;
+    }
+    .abt-us h1{
+        font-size: clamp(1.45rem, 3.2dvw, 2.2rem) !important;
+        border-bottom: 1px solid var(--accent) !important;
+    }
+    .abt-us p1{
+        font-size: clamp(1.04rem, 1.85dvw, 1.2rem) !important;
+    }
+}
 
 
 @media (max-width: 991px){
@@ -346,7 +384,7 @@ input{
         opacity: 0.9;
         width: 100%;
         border-bottom-right-radius: 10%;
-        position: sticky;
+        position: fixed;
         top: 0;
         transition-duration: .3s;
         -webkit-transition-duration: 0.3s;
@@ -424,7 +462,7 @@ input{
         font-size: clamp(1rem, 2dvw, 1.3rem);
         height: 0;
         width: clamp(225px, 24dvw, 300px);
-        transform: translate(25dvw, -5%);
+        transform: translate(30dvw, -5%);
         overflow: hidden;
         flex-direction: column;
         display: flex;
@@ -455,5 +493,22 @@ input{
     footer{
         background: var(--dcolor);
     }
+    .abt-us{
+        width:90%;
+        margin: auto;
+        text-align: center;
+        margin-top: clamp(6px, 2dvw, 14px);
+        padding-bottom: clamp(8px, 2.5dvw, 15px);
+        border-bottom: 1px solid var(--laccent);
+    }
+    .abt-us h1{
+        margin: auto;
+        margin-bottom: clamp(10px, 3dvw, 20px);
+        font-size: clamp(1.8rem, 3dvw, 2.2rem);
+        width: clamp(130px, 30%, 200px);
+        border-bottom: 1px solid var(--accent);
+    }
+    .abt-us p1{
+        font-size: clamp(1rem, 2dvw, 1.5rem);
+    }
 }
-
